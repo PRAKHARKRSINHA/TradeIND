@@ -5,7 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 
 const Signup = () => {
   const toLogin = () => {
-    window.location.href = "https://zerodha-backend-xoni.onrender.com/login";
+    window.location.href = "https://zerodha-clone-1-w0i1.onrender.com/login";
   };
   const [inputValue, setInputValue] = useState({
     email: "",
