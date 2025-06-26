@@ -5,7 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 
 const Signup = () => {
   const toDashboard = () => {
-    window.location.href = "https://zerodha-dashboard-76qo.onrender.com/";
+    window.location.href = "https://zerodha-backend-xoni.onrender.com/login";
   };
   const [inputValue, setInputValue] = useState({
     email: "",
@@ -79,8 +79,8 @@ const Signup = () => {
             />
           </div>
           <div className="col-sm-5 p-3 p-sm-5 pt-sm-0">
-            <p className="blockquote-footer" style={{ textAlign: "center" }}>
-              <em>if you are a visitor and dont want to signup</em>
+            {/* <p className="blockquote-footer" style={{ textAlign: "center" }}> */}
+              {/* <em>if you are a visitor and dont want to signup</em>
             </p>
             <button
               type="button"
@@ -88,8 +88,8 @@ const Signup = () => {
               onClick={toDashboard}
             >
               Guest Login
-            </button>
-            <hr />
+            </button> */}
+            {/* <hr /> */}
             <h2 className="text-center">Signup</h2>
             <div className="d-flex justify-content-center">
               <div className="mt-4 text-center">
