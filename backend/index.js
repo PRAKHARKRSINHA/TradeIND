@@ -17,7 +17,7 @@ const uri = process.env.MONGO_URL;
 
 const app = express();
 
-app.use(cors());
+
 app.use(bodyParser.json());
 
 mongoose
@@ -197,6 +197,20 @@ mongoose
 // res.send("Done!");
 // })
 
+app.use(
+  cors({
+    origin: ["http://localhost:3000"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
+
+app.use(cookieParser());
+
+app.use(express.json());
+
+app.use("/", authRoute);
+
 app.get("/allHoldings", async (req, res) => {
   let allHoldings = await HoldingsModel.find({});
   res.json(allHoldings);
@@ -221,23 +235,12 @@ app.post("/newOrder", async(req,res) =>{
 })
 
 
-app.listen(3002, () => {
-  console.log("App started!");
-  mongoose.connect(uri);
-  console.log("DB connected!");
+
+
+
+
+app.listen(PORT, () => {
+  console.log(`App started on port ${PORT}`);
 });
 
-app.use(
-  cors({
-    origin: ["http://localhost:3002"],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  })
-);
-
-app.use(cookieParser());
-
-app.use(express.json());
-
-app.use("/", authRoute);
 

@@ -5,7 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 
 const Signup = () => {
   const toDashboard = () => {
-    window.location.href = "http://localhost:3000/";
+    window.location.href = "http://localhost:3001/";
   };
   const [inputValue, setInputValue] = useState({
     email: "",
@@ -37,7 +37,7 @@ const Signup = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "https://zerodha-clone-backend-u9w5.onrender.com/signup",
+        "http://localhost:3002/signup",
         {
           ...inputValue,
         },
@@ -68,6 +68,7 @@ const Signup = () => {
 
   return (
     <div className="container p-3 p-sm-5 text-center">
+      <div className="center-wrapper">
       <form onSubmit={handleSubmit}>
         <div className="row">
           <div className="col-12 col-sm-7">
@@ -81,7 +82,11 @@ const Signup = () => {
             <p className="blockquote-footer" style={{ textAlign: "center" }}>
               <em>if you are a visitor and dont want to signup</em>
             </p>
-            <button className="btn btn-primary" onClick={toDashboard}>
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={toDashboard}
+            >
               Guest Login
             </button>
             <hr />
@@ -126,6 +131,7 @@ const Signup = () => {
           </div>
         </div>
       </form>
+      </div>
       <ToastContainer />
     </div>
   );

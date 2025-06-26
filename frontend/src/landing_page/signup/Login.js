@@ -5,7 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 
 const Login = () => {
   const toDashboard = () => {
-    window.location.href = "http://localhost:3000/";
+    window.location.href = "http://localhost:3001/";
   };
   const [inputValue, setInputValue] = useState({
     email: "",
@@ -36,7 +36,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "https://zerodha-clone-backend-u9w5.onrender.com/login",
+        "http://localhost:3002/login",
         {
           ...inputValue,
         },
