@@ -5,7 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 
 const Signup = () => {
   const toLogin = () => {
-    window.location.href = "https://zerodha-clone-1-w0i1.onrender.com/login";
+    window.location.href = "http://localhost:3000/login";
   };
   const [inputValue, setInputValue] = useState({
     email: "",
@@ -123,6 +123,7 @@ const Signup = () => {
                   <button
                     type="submit"
                     className="mx-auto btn btn-primary mb-5"
+                    onClick={toLogin}
                   >
                     Submit
                   </button>
